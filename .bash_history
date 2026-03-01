@@ -518,3 +518,201 @@ cat ingress.yaml
 kubectl delete -f ingress.yaml 
 kubectl apply -f ingress.yaml 
 cat ingress.yaml 
+git branch -m main
+gitn init
+git inti
+git init
+ls -larth
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Rahiman1999/Devopsinoneshot.git
+git push -u origin main
+git remote add origin https://github.com/Rahiman1999/Devopsinoneshot.git
+git push -u origin main
+git status
+git branches
+git branch
+hitoryt|grep -i git
+history|grep -i git
+git commit -m "first commit"
+git remote add origin git@github.com:Rahiman1999/Devopsinoneshot.git
+git push -u origin main
+git status
+git remote add origin git@github.com:Rahiman1999/devopsLearning.git
+git push -u origin main
+git remote -v
+git remote set-url origin git remote set-url origin git@github.com:Rahiman1999/NewRepo.git
+git remote set-url origin git@github.com:Rahiman1999/devopsLearning.git
+git remote -v
+git commit -m "devops"
+git log
+git push -u origin main
+git remote set-url origin git remote https://github.com/Rahiman1999/devopsLearning.git
+git remote set-url origin https://github.com/Rahiman1999/devopsLearning.git
+git remote -v
+git push -u origin main
+git config --global user.name "Rahiman1999"
+git push -u origin main
+ssh-keygen -t ed25519 -C "srahiman1999@gmail.com"
+cat /home/ubuntu/.ssh/id_ed25519
+kubectl get pods
+kubectl get pods -n nginx
+kubectl get ingress -n nginx
+kubectl get ing -n ingress
+ls -rlth
+ls -lrth 
+history|grep -i ingress
+kubectl get pods -n ingress-nginx
+kubectl describe ingress-nginx-controller-86bb9f8d4b-wz59 -n ingress.yaml 
+kubectl describe ingress-nginx-controller-86bb9f8d4b-wz59 -n ingress-nginx
+kubectl get pods -n ingress-nginx
+kubectl apply -f ingress.yaml
+kubectl get pods -n ingress-nginx
+kubectl describe ingress-nginx-controller-86bb9f8d4b-wz59 -n ingress-nginx
+kubectl logs ingress-nginx-controller-86bb9f8d4b-wz59 -n ingress-nginx
+kubectl get pods -n ingress-nginx
+kubectl port-forward ingress/nginx-ingress -n nginx 81:80 --address=0.0.0.0
+vi ingress.yaml 
+kubectl port-forward ingress/nginx-ingress -n nginx 81:80 --address=0.0.0.0
+kubectl port-forward ingress/nginx-ingress -n nginx 8081:80 --address=0.0.0.0
+kubectl get pods -n ingress-nginx
+kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8080:80 --address=0.0.0.0
+vi ingress.yaml 
+kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8080:80 --address=0.0.0.0
+kubectl apply -f ingress.yaml 
+vi ingress.yaml 
+kubectl apply -f ingress.yaml 
+vi ingress.yaml 
+kubectl apply -f ingress.yaml 
+kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8080:80 --address=0.0.0.0
+git remote add origin https://github.com/Rahiman1999/Devopsinoneshot.git
+git init
+git add .
+kubectl get svc -n nginx
+kubectl get svc -n nginx-ingress
+kubectl get svc -n ingress-nginx
+cd .ssh/
+ls -rth
+cat id_ed25519
+cat ~/.ssh/id_ed25519
+ls -lrth
+cat id_ed25519.pub 
+cd -
+history|grep url
+git remote set-url origin git remote git@github.com:Rahiman1999/Devopsinoneshot.git
+git remote set-url origin git@github.com:Rahiman1999/Devopsinoneshot.git
+git remote -v
+git push -u origin main
+mkdir my-sql
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl get ns
+kubectl get labels
+kubectl get pods --show-label -n nginx
+kubectl get pods -n nginx --show-label
+kubectl get pods -n nginx
+kubectl label nodes worker1 disktype=ssd
+kubectl label deployment notes-app tier=frontend
+cd 
+df -h
+kubectl get pv -n nginx
+cd /mnt/
+ls
+cd ~
+cd my-sql/
+kubectl delete -n nginx
+kubectl delete -f ../namespace.yml 
+kubectl delete -f ../persistentVolume.yaml 
+kubectl delete -f ../persistentVolumeClaim.yaml 
+kubectl get pods -n nginx
+kubectl get pods 
+vi statefulSet.yaml
+vi namespace.yaml
+kubectl apply -f namespace.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi service.yaml
+kubectl apply -f service.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+kubectl get ns
+vi statefulSet.yaml 
+kubectl get ns
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+vi statefulSet.yaml 
+kubectl get pods -n mysql
+kubectl describe mysql-statefulset-0 -n mysqk
+kubectl describe mysql-statefulset-0 -n mysql
+kubectl logs mysql-statefulset-0 -n mysql
+vi statefulSet.yaml 
+kubectl logs mysql-statefulset-0 -n mysql
+kubectl apply -f statefulSet.yaml 
+kubectl get pods -n mysql
+kubectl deleted -f statefulSet.yaml 
+kubectl delete -f statefulSet.yaml 
+kubectl apply -f statefulSet.yaml 
+kubectl get pods -n mysql
+vi statefulSet.yaml 
+docker pull mysql:8.0
+vi statefulSet.yaml 
+kubectl run test --image=busybox --restart=Never -it -- nslookup docker.io
+kubectl describe pod mysql-statefulset-0 -n mysql
+df -h /var
+cd /var/
+df -h 
+df -h  .
+ls
+ls -rlth
+du -sh *
+sudo du -sh /var/lib/containerd
+cd ~
+ls -rlth
+rm -rf k8s/
+df -h /var
+rm -rf django-notes-app/
+ls -rlth
+df -h /var
+cd my-sql/
+kubectl apply -f statefulSet.yaml 
+kubectl get pods -n mysql

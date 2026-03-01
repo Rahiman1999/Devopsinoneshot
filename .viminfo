@@ -11,18 +11,26 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q
+|2,0,1772362326,,"q"
 :wq
-|2,0,1772351003,,"wq"
+|2,0,1772362211,,"wq"
+:%d
+|2,0,1772361753,,"%d"
+:set number
+|2,0,1772361011,,"set number"
+:set nubmer
+|2,0,1772360849,,"set nubmer"
+:numbers
+|2,0,1772360698,,"numbers"
+:setnumber
+|2,0,1772360691,,"setnumber"
 ::q!
 |2,0,1772349436,,":q!"
-:q
-|2,0,1771914415,,"q"
 :q!
 |2,0,1771914257,,"q!"
 :wq!
 |2,0,1771913995,,"wq!"
-:set number
-|2,0,1771495566,,"set number"
 
 # Search String History (newest to oldest):
 
@@ -33,235 +41,353 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""-	CHAR	0
+""1	LINE	0
+	kind: Statefulet
+	apiVersion: apps/v1
+	metadata:
+	  name: mysql-statefulset
+	  namespace: mysql
+	spec:
+	  serviceName: mysql-service
+	  replicas: 3
+	  selector:
+	    matchLabels:
+	      app: mysql
+	
+	  template:
+	    metadata: 
+	     labels:
+	       app: mysql
+	    spec:
+	      containers:
+	      - name: mysql
+	        image: mysql:8.0
+	        ports:
+	        - containerPort: 3306
+	        env:
+	        - name: MYSQL_ROOT_PASSWORD
+	          value: root
+	        - name: MYSQL_DATABASE
+	          value: devops
+	        volumeMounts:
+	        - name: mysql-data
+	          mountPath: /var/lib/mysql
+	    volumeClaimTemplates:
+	    - metadata: 
+	        name: mysql-data
+	      spec:
+	        accessModes: ["ReadWriteOnce"]
+	        resource
+|3,1,1,1,36,0,1772361753,"kind: Statefulet","apiVersion: apps/v1","metadata:","  name: mysql-statefulset","  namespace: mysql","spec:","  serviceName: mysql-service","  replicas: 3","  selector:","    matchLabels:","      app: mysql","","  template:","    metadata: ","     labels:","       app: mysql","    spec:","      containers:","      - name: mysql","        image: mysql:8.0","        ports:","        - containerPort: 3306","        env:",>37
+|<"        - name: MYSQL_ROOT_PASSWORD","          value: root","        - name: MYSQL_DATABASE","          value: devops","        volumeMounts:","        - name: mysql-data","          mountPath: /var/lib/mysql","    volumeClaimTemplates:","    - metadata: ","        name: mysql-data","      spec:","        accessModes: [\"ReadWriteOnce\"]","        resource"
+"-	CHAR	0
 	S
-|3,1,36,0,1,0,1771783844,"S"
+|3,0,36,0,1,0,1771783844,"S"
 
 # File marks:
-'0  7  3  ~/ingress.yaml
-|4,48,7,3,1772351003,"~/ingress.yaml"
-'1  7  47  ~/ingress.yaml
-|4,49,7,47,1772350907,"~/ingress.yaml"
-'2  7  47  ~/ingress.yaml
-|4,50,7,47,1772350805,"~/ingress.yaml"
-'3  7  47  ~/ingress.yaml
-|4,51,7,47,1772350805,"~/ingress.yaml"
-'4  5  16  ~/ingress.yaml
-|4,52,5,16,1772349436,"~/ingress.yaml"
-'5  5  16  ~/ingress.yaml
-|4,53,5,16,1772349436,"~/ingress.yaml"
-'6  5  16  ~/ingress.yaml
-|4,54,5,16,1772349436,"~/ingress.yaml"
-'7  5  16  ~/ingress.yaml
-|4,55,5,16,1772349436,"~/ingress.yaml"
-'8  5  16  ~/ingress.yaml
-|4,56,5,16,1772349436,"~/ingress.yaml"
-'9  5  16  ~/ingress.yaml
-|4,57,5,16,1772349436,"~/ingress.yaml"
+'0  28  13  ~/my-sql/statefulSet.yaml
+|4,48,28,13,1772362326,"~/my-sql/statefulSet.yaml"
+'1  28  13  ~/my-sql/statefulSet.yaml
+|4,49,28,13,1772362211,"~/my-sql/statefulSet.yaml"
+'2  22  26  ~/my-sql/statefulSet.yaml
+|4,50,22,26,1772362082,"~/my-sql/statefulSet.yaml"
+'3  22  26  ~/my-sql/statefulSet.yaml
+|4,51,22,26,1772362082,"~/my-sql/statefulSet.yaml"
+'4  22  26  ~/my-sql/statefulSet.yaml
+|4,52,22,26,1772362082,"~/my-sql/statefulSet.yaml"
+'5  22  26  ~/my-sql/statefulSet.yaml
+|4,53,22,26,1772362082,"~/my-sql/statefulSet.yaml"
+'6  43  0  ~/my-sql/statefulSet.yaml
+|4,54,43,0,1772361904,"~/my-sql/statefulSet.yaml"
+'7  43  0  ~/my-sql/statefulSet.yaml
+|4,55,43,0,1772361904,"~/my-sql/statefulSet.yaml"
+'8  43  0  ~/my-sql/statefulSet.yaml
+|4,56,43,0,1772361904,"~/my-sql/statefulSet.yaml"
+'9  43  0  ~/my-sql/statefulSet.yaml
+|4,57,43,0,1772361904,"~/my-sql/statefulSet.yaml"
 
 # Jumplist (newest first):
--'  7  3  ~/ingress.yaml
-|4,39,7,3,1772351003,"~/ingress.yaml"
--'  7  47  ~/ingress.yaml
-|4,39,7,47,1772350907,"~/ingress.yaml"
--'  7  47  ~/ingress.yaml
-|4,39,7,47,1772350805,"~/ingress.yaml"
--'  5  16  ~/ingress.yaml
-|4,39,5,16,1772350571,"~/ingress.yaml"
--'  5  16  ~/ingress.yaml
-|4,39,5,16,1772350571,"~/ingress.yaml"
--'  5  16  ~/ingress.yaml
-|4,39,5,16,1772350571,"~/ingress.yaml"
--'  5  16  ~/ingress.yaml
-|4,39,5,16,1772349436,"~/ingress.yaml"
--'  5  16  ~/ingress.yaml
-|4,39,5,16,1771930018,"~/ingress.yaml"
--'  9  38  ~/ingress.yaml
-|4,39,9,38,1771923709,"~/ingress.yaml"
--'  9  38  ~/ingress.yaml
-|4,39,9,38,1771923709,"~/ingress.yaml"
--'  9  38  ~/ingress.yaml
-|4,39,9,38,1771923709,"~/ingress.yaml"
--'  7  38  ~/ingress.yaml
-|4,39,7,38,1771923709,"~/ingress.yaml"
--'  7  38  ~/ingress.yaml
-|4,39,7,38,1771923709,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923697,"~/ingress.yaml"
--'  22  13  ~/ingress.yaml
-|4,39,22,13,1771923697,"~/ingress.yaml"
--'  18  13  ~/ingress.yaml
-|4,39,18,13,1771923697,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923697,"~/ingress.yaml"
--'  22  13  ~/ingress.yaml
-|4,39,22,13,1771923697,"~/ingress.yaml"
--'  18  13  ~/ingress.yaml
-|4,39,18,13,1771923697,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923697,"~/ingress.yaml"
--'  22  13  ~/ingress.yaml
-|4,39,22,13,1771923697,"~/ingress.yaml"
--'  18  13  ~/ingress.yaml
-|4,39,18,13,1771923697,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923697,"~/ingress.yaml"
--'  18  13  ~/ingress.yaml
-|4,39,18,13,1771923697,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923697,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923684,"~/ingress.yaml"
--'  20  13  ~/ingress.yaml
-|4,39,20,13,1771923679,"~/ingress.yaml"
--'  7  47  ~/ingress.yaml
-|4,39,7,47,1771923668,"~/ingress.yaml"
--'  7  47  ~/ingress.yaml
-|4,39,7,47,1771923668,"~/ingress.yaml"
--'  7  47  ~/ingress.yaml
-|4,39,7,47,1771923637,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  27  11  ~/ingress.yaml
-|4,39,27,11,1771923586,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  27  11  ~/ingress.yaml
-|4,39,27,11,1771923586,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  27  11  ~/ingress.yaml
-|4,39,27,11,1771923586,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  25  11  ~/ingress.yaml
-|4,39,25,11,1771923586,"~/ingress.yaml"
--'  21  11  ~/ingress.yaml
-|4,39,21,11,1771921481,"~/ingress.yaml"
--'  21  11  ~/ingress.yaml
-|4,39,21,11,1771921481,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771921481,"~/ingress.yaml"
--'  21  11  ~/ingress.yaml
-|4,39,21,11,1771921481,"~/ingress.yaml"
--'  21  11  ~/ingress.yaml
-|4,39,21,11,1771921481,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771921481,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771921481,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771921481,"~/ingress.yaml"
--'  23  11  ~/ingress.yaml
-|4,39,23,11,1771921481,"~/ingress.yaml"
--'  23  13  ~/ingress.yaml
-|4,39,23,13,1771921155,"~/ingress.yaml"
--'  19  22  ~/ingress.yaml
-|4,39,19,22,1771921144,"~/ingress.yaml"
--'  19  22  ~/ingress.yaml
-|4,39,19,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  19  22  ~/ingress.yaml
-|4,39,19,22,1771921144,"~/ingress.yaml"
--'  19  22  ~/ingress.yaml
-|4,39,19,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  23  22  ~/ingress.yaml
-|4,39,23,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771921144,"~/ingress.yaml"
--'  21  22  ~/ingress.yaml
-|4,39,21,22,1771920749,"~/ingress.yaml"
--'  23  22  ~/ingress.yaml
-|4,39,23,22,1771920742,"~/ingress.yaml"
--'  23  22  ~/ingress.yaml
-|4,39,23,22,1771920732,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  1  0  ~/ingress.yaml
-|4,39,1,0,1771920453,"~/ingress.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
--'  6  17  ~/django-notes-app/k8s/service.yaml
-|4,39,6,17,1771920237,"~/django-notes-app/k8s/service.yaml"
+-'  28  13  ~/my-sql/statefulSet.yaml
+|4,39,28,13,1772362326,"~/my-sql/statefulSet.yaml"
+-'  28  13  ~/my-sql/statefulSet.yaml
+|4,39,28,13,1772362211,"~/my-sql/statefulSet.yaml"
+-'  22  26  ~/my-sql/statefulSet.yaml
+|4,39,22,26,1772362175,"~/my-sql/statefulSet.yaml"
+-'  22  26  ~/my-sql/statefulSet.yaml
+|4,39,22,26,1772362175,"~/my-sql/statefulSet.yaml"
+-'  22  26  ~/my-sql/statefulSet.yaml
+|4,39,22,26,1772362082,"~/my-sql/statefulSet.yaml"
+-'  43  0  ~/my-sql/statefulSet.yaml
+|4,39,43,0,1772362055,"~/my-sql/statefulSet.yaml"
+-'  43  0  ~/my-sql/statefulSet.yaml
+|4,39,43,0,1772362055,"~/my-sql/statefulSet.yaml"
+-'  43  0  ~/my-sql/statefulSet.yaml
+|4,39,43,0,1772362055,"~/my-sql/statefulSet.yaml"
+-'  43  0  ~/my-sql/statefulSet.yaml
+|4,39,43,0,1772361904,"~/my-sql/statefulSet.yaml"
+-'  43  0  ~/my-sql/statefulSet.yaml
+|4,39,43,0,1772361762,"~/my-sql/statefulSet.yaml"
+-'  1  15  ~/my-sql/statefulSet.yaml
+|4,39,1,15,1772361753,"~/my-sql/statefulSet.yaml"
+-'  1  15  ~/my-sql/statefulSet.yaml
+|4,39,1,15,1772361753,"~/my-sql/statefulSet.yaml"
+-'  1  15  ~/my-sql/statefulSet.yaml
+|4,39,1,15,1772361753,"~/my-sql/statefulSet.yaml"
+-'  1  15  ~/my-sql/statefulSet.yaml
+|4,39,1,15,1772361753,"~/my-sql/statefulSet.yaml"
+-'  1  15  ~/my-sql/statefulSet.yaml
+|4,39,1,15,1772361753,"~/my-sql/statefulSet.yaml"
+-'  32  15  ~/my-sql/statefulSet.yaml
+|4,39,32,15,1772361628,"~/my-sql/statefulSet.yaml"
+-'  32  15  ~/my-sql/statefulSet.yaml
+|4,39,32,15,1772361628,"~/my-sql/statefulSet.yaml"
+-'  32  15  ~/my-sql/statefulSet.yaml
+|4,39,32,15,1772361628,"~/my-sql/statefulSet.yaml"
+-'  32  15  ~/my-sql/statefulSet.yaml
+|4,39,32,15,1772361628,"~/my-sql/statefulSet.yaml"
+-'  32  15  ~/my-sql/statefulSet.yaml
+|4,39,32,15,1772361628,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361600,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361600,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361600,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361600,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361600,"~/my-sql/statefulSet.yaml"
+-'  38  11  ~/my-sql/statefulSet.yaml
+|4,39,38,11,1772361588,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361561,"~/my-sql/statefulSet.yaml"
+-'  15  9  ~/my-sql/statefulSet.yaml
+|4,39,15,9,1772361501,"~/my-sql/statefulSet.yaml"
+-'  1  14  ~/my-sql/statefulSet.yaml
+|4,39,1,14,1772361486,"~/my-sql/statefulSet.yaml"
+-'  1  14  ~/my-sql/statefulSet.yaml
+|4,39,1,14,1772361486,"~/my-sql/statefulSet.yaml"
+-'  1  14  ~/my-sql/statefulSet.yaml
+|4,39,1,14,1772361486,"~/my-sql/statefulSet.yaml"
+-'  1  14  ~/my-sql/statefulSet.yaml
+|4,39,1,14,1772361470,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361448,"~/my-sql/statefulSet.yaml"
+-'  4  24  ~/my-sql/statefulSet.yaml
+|4,39,4,24,1772361390,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361380,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361348,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361304,"~/my-sql/statefulSet.yaml"
+-'  2  16  ~/my-sql/statefulSet.yaml
+|4,39,2,16,1772361251,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361242,"~/my-sql/statefulSet.yaml"
+-'  5  1  ~/my-sql/statefulSet.yaml
+|4,39,5,1,1772361215,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361194,"~/my-sql/statefulSet.yaml"
+-'  31  3  ~/my-sql/statefulSet.yaml
+|4,39,31,3,1772361099,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361008,"~/my-sql/statefulSet.yaml"
+-'  30  9  ~/my-sql/statefulSet.yaml
+|4,39,30,9,1772361000,"~/my-sql/statefulSet.yaml"
 
 # History of marks within files (newest to oldest):
+
+> ~/my-sql/statefulSet.yaml
+	*	1772362325	0
+	"	28	13
+	^	22	27
+	.	22	26
+	+	1	63
+	+	1	34
+	+	1	20
+	+	1	9
+	+	1	7
+	+	1	6
+	+	1	21
+	+	1	26
+	+	1	8
+	+	1	7
+	+	1	9
+	+	1	7
+	+	1	23
+	+	1	63
+	+	1	24
+	+	1	0
+	+	1	6
+	+	1	23
+	+	1	15
+	+	1	25
+	+	1	40
+	+	1	64
+	+	1	12
+	+	1	8
+	+	1	7
+	+	1	9
+	+	1	3
+	+	1	2
+	+	1	16
+	+	1	25
+	+	1	14
+	+	1	9
+	+	1	4
+	+	1	8
+	+	1	6
+	+	1	8
+	+	1	28
+	+	1	49
+	+	1	14
+	+	1	19
+	+	42	22
+	+	22	26
+
+> ~/my-sql/service.yaml
+	*	1772360599	0
+	"	7	13
+	^	7	14
+	.	7	13
+	+	10	0
+	+	8	2
+	+	13	0
+	+	11	2
+	+	12	3
+	+	11	2
+	+	14	20
+	+	2	12
+	+	4	2
+	+	5	8
+	+	10	2
+	+	11	2
+	+	12	4
+	+	13	4
+	+	14	4
+	+	8	6
+	+	13	8
+	+	7	13
+
+> ~/my-sql/namespace.yaml
+	*	1772360100	0
+	"	4	12
+	^	4	13
+	.	4	12
+	+	4	12
 
 > ~/ingress.yaml
 	*	1772351002	0
